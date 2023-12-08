@@ -1,0 +1,67 @@
+V "GNAT Lib v10"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U checkprime%b		main.adb		629fde1d NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D main.adb		20231208105002 cc6b0b70 checkprime%b
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D system.ads		20230707070819 4635ec04 system%s
+D s-conca3.ads		20230707070819 0b705ca5 system.concat_3%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-imgboo.ads		20230707070819 f5d971eb system.img_bool%s
+D s-imgint.ads		20230707070819 02dbe0c2 system.img_int%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [checkprime standard 3 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 8|1r6 20r16 22r7 22r35 24r7 25r7 26r7 27r7 30r10 31r10 32r10
+. 35r7 36r7 37r7 38r7 39r7 41r7
+X 6 a-textio.ads
+57K13*Text_IO 727e16 8|1w10 20r20 22r11 22r39 24r11 25r11 26r11 27r11 30r14
+. 31r14 32r14 35r11 36r11 37r11 38r11 39r11 41r11
+64P9*File_Type 8|20r28
+66n32*Out_File{66E9} 8|22r47
+99U14*Create 8|22s19
+129U14*Close 8|41s19
+498U14*Put_Line 8|24s19 25s19 26s19 27s19 30s22 31s22 32s22 35s19 36s19 37s19
+. 38s19 39s19
+X 8 main.adb
+3U11*CheckPrime 3b11 46l5 46t15
+4V13 Is_Prime{boolean} 4b13 4>23 17l8 17t16 31s76
+4i23 Num{integer} 6r10 10r21 11r13
+10i11 I{integer} 11r21
+19U14 Generate_CheckPrime_File 19b14 42l8 42t32 45s4
+20p7 Output{6|64P9} 22m27 22r27 24r29 25r29 26r29 27r29 30r32 31r32 32r32
+. 35r29 36r29 37r29 38r29 39r29 41m26 41r26
+29i11 I{integer} 30r75 31r86
+
