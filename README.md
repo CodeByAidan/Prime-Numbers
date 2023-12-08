@@ -7,8 +7,7 @@
 </p>
 
 <div align="center">
-    <video controls autoplay loop>
-        <source src="video/prime-number.mp4" type="video/mp4">
-        The video is not supported by your browser.
-    </video>
+    
+https://github.com/CodeByAidan/Prime-Numbers/assets/67598470/188cfbda-5f45-454b-91ad-cab37de27c8c
+
 </div>
