@@ -10,7 +10,3 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
-C++/checkPrime.cpp
-C++/main.cpp
-C++/main.exe
-C++/Makefile
