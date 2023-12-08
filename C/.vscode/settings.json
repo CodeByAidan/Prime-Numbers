@@ -1,0 +1,11 @@
+{
+    "makefile.compileCommandsPath": ".vscode/compile_commands.json",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\Other\\Primes\\C",
+            "binaryPath": "d:\\Other\\Primes\\C\\main",
+            "binaryArgs": []
+        }
+    ],
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}\\.vscode\\compile_commands.json"
+}

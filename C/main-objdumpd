@@ -1,0 +1,212 @@
+
+main.o:     file format pe-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fprintf>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 30          	sub    $0x30,%rsp
+   8:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   c:	48 89 55 18          	mov    %rdx,0x18(%rbp)
+  10:	4c 89 45 20          	mov    %r8,0x20(%rbp)
+  14:	4c 89 4d 28          	mov    %r9,0x28(%rbp)
+  18:	48 8d 45 20          	lea    0x20(%rbp),%rax
+  1c:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  20:	48 8b 4d f0          	mov    -0x10(%rbp),%rcx
+  24:	48 8b 55 18          	mov    0x18(%rbp),%rdx
+  28:	48 8b 45 10          	mov    0x10(%rbp),%rax
+  2c:	49 89 c8             	mov    %rcx,%r8
+  2f:	48 89 c1             	mov    %rax,%rcx
+  32:	e8 00 00 00 00       	call   37 <fprintf+0x37>
+  37:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  3a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  3d:	48 83 c4 30          	add    $0x30,%rsp
+  41:	5d                   	pop    %rbp
+  42:	c3                   	ret
+
+0000000000000043 <printf>:
+  43:	55                   	push   %rbp
+  44:	53                   	push   %rbx
+  45:	48 83 ec 38          	sub    $0x38,%rsp
+  49:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+  4e:	48 89 4d 20          	mov    %rcx,0x20(%rbp)
+  52:	48 89 55 28          	mov    %rdx,0x28(%rbp)
+  56:	4c 89 45 30          	mov    %r8,0x30(%rbp)
+  5a:	4c 89 4d 38          	mov    %r9,0x38(%rbp)
+  5e:	48 8d 45 28          	lea    0x28(%rbp),%rax
+  62:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  66:	48 8b 5d f0          	mov    -0x10(%rbp),%rbx
+  6a:	b9 01 00 00 00       	mov    $0x1,%ecx
+  6f:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 76 <printf+0x33>
+  76:	ff d0                	call   *%rax
+  78:	48 89 c1             	mov    %rax,%rcx
+  7b:	48 8b 45 20          	mov    0x20(%rbp),%rax
+  7f:	49 89 d8             	mov    %rbx,%r8
+  82:	48 89 c2             	mov    %rax,%rdx
+  85:	e8 00 00 00 00       	call   8a <printf+0x47>
+  8a:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  8d:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  90:	48 83 c4 38          	add    $0x38,%rsp
+  94:	5b                   	pop    %rbx
+  95:	5d                   	pop    %rbp
+  96:	c3                   	ret
+
+0000000000000097 <isPrime>:
+  97:	55                   	push   %rbp
+  98:	48 89 e5             	mov    %rsp,%rbp
+  9b:	48 83 ec 10          	sub    $0x10,%rsp
+  9f:	89 4d 10             	mov    %ecx,0x10(%rbp)
+  a2:	83 7d 10 01          	cmpl   $0x1,0x10(%rbp)
+  a6:	7f 07                	jg     af <isPrime+0x18>
+  a8:	b8 00 00 00 00       	mov    $0x0,%eax
+  ad:	eb 31                	jmp    e0 <isPrime+0x49>
+  af:	c7 45 fc 02 00 00 00 	movl   $0x2,-0x4(%rbp)
+  b6:	eb 18                	jmp    d0 <isPrime+0x39>
+  b8:	8b 45 10             	mov    0x10(%rbp),%eax
+  bb:	99                   	cltd
+  bc:	f7 7d fc             	idivl  -0x4(%rbp)
+  bf:	89 d0                	mov    %edx,%eax
+  c1:	85 c0                	test   %eax,%eax
+  c3:	75 07                	jne    cc <isPrime+0x35>
+  c5:	b8 00 00 00 00       	mov    $0x0,%eax
+  ca:	eb 14                	jmp    e0 <isPrime+0x49>
+  cc:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+  d0:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  d3:	0f af c0             	imul   %eax,%eax
+  d6:	39 45 10             	cmp    %eax,0x10(%rbp)
+  d9:	7d dd                	jge    b8 <isPrime+0x21>
+  db:	b8 01 00 00 00       	mov    $0x1,%eax
+  e0:	48 83 c4 10          	add    $0x10,%rsp
+  e4:	5d                   	pop    %rbp
+  e5:	c3                   	ret
+
+00000000000000e6 <main>:
+  e6:	55                   	push   %rbp
+  e7:	48 89 e5             	mov    %rsp,%rbp
+  ea:	48 83 ec 30          	sub    $0x30,%rsp
+  ee:	e8 00 00 00 00       	call   f3 <main+0xd>
+  f3:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # fa <main+0x14>
+  fa:	48 89 c2             	mov    %rax,%rdx
+  fd:	48 8d 05 02 00 00 00 	lea    0x2(%rip),%rax        # 106 <main+0x20>
+ 104:	48 89 c1             	mov    %rax,%rcx
+ 107:	e8 00 00 00 00       	call   10c <main+0x26>
+ 10c:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+ 110:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+ 115:	75 2a                	jne    141 <main+0x5b>
+ 117:	b9 02 00 00 00       	mov    $0x2,%ecx
+ 11c:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 123 <main+0x3d>
+ 123:	ff d0                	call   *%rax
+ 125:	48 89 c1             	mov    %rax,%rcx
+ 128:	48 8d 05 10 00 00 00 	lea    0x10(%rip),%rax        # 13f <main+0x59>
+ 12f:	48 89 c2             	mov    %rax,%rdx
+ 132:	e8 c9 fe ff ff       	call   0 <fprintf>
+ 137:	b8 01 00 00 00       	mov    $0x1,%eax
+ 13c:	e9 d9 01 00 00       	jmp    31a <main+0x234>
+ 141:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 145:	48 8d 15 31 00 00 00 	lea    0x31(%rip),%rdx        # 17d <main+0x97>
+ 14c:	48 89 c1             	mov    %rax,%rcx
+ 14f:	e8 ac fe ff ff       	call   0 <fprintf>
+ 154:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 158:	48 8d 15 48 00 00 00 	lea    0x48(%rip),%rdx        # 1a7 <main+0xc1>
+ 15f:	48 89 c1             	mov    %rax,%rcx
+ 162:	e8 99 fe ff ff       	call   0 <fprintf>
+ 167:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 16b:	48 8d 15 60 00 00 00 	lea    0x60(%rip),%rdx        # 1d2 <main+0xec>
+ 172:	48 89 c1             	mov    %rax,%rcx
+ 175:	e8 86 fe ff ff       	call   0 <fprintf>
+ 17a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 17e:	48 8d 15 74 00 00 00 	lea    0x74(%rip),%rdx        # 1f9 <main+0x113>
+ 185:	48 89 c1             	mov    %rax,%rcx
+ 188:	e8 73 fe ff ff       	call   0 <fprintf>
+ 18d:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 191:	48 8d 15 8b 00 00 00 	lea    0x8b(%rip),%rdx        # 223 <main+0x13d>
+ 198:	48 89 c1             	mov    %rax,%rcx
+ 19b:	e8 60 fe ff ff       	call   0 <fprintf>
+ 1a0:	c7 45 fc 01 00 00 00 	movl   $0x1,-0x4(%rbp)
+ 1a7:	eb 51                	jmp    1fa <main+0x114>
+ 1a9:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 1ac:	89 c1                	mov    %eax,%ecx
+ 1ae:	e8 e4 fe ff ff       	call   97 <isPrime>
+ 1b3:	84 c0                	test   %al,%al
+ 1b5:	74 3f                	je     1f6 <main+0x110>
+ 1b7:	8b 55 fc             	mov    -0x4(%rbp),%edx
+ 1ba:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1be:	41 89 d0             	mov    %edx,%r8d
+ 1c1:	48 8d 15 a7 00 00 00 	lea    0xa7(%rip),%rdx        # 26f <main+0x189>
+ 1c8:	48 89 c1             	mov    %rax,%rcx
+ 1cb:	e8 30 fe ff ff       	call   0 <fprintf>
+ 1d0:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1d4:	48 8d 15 bd 00 00 00 	lea    0xbd(%rip),%rdx        # 298 <main+0x1b2>
+ 1db:	48 89 c1             	mov    %rax,%rcx
+ 1de:	e8 1d fe ff ff       	call   0 <fprintf>
+ 1e3:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1e7:	48 8d 15 d3 00 00 00 	lea    0xd3(%rip),%rdx        # 2c1 <main+0x1db>
+ 1ee:	48 89 c1             	mov    %rax,%rcx
+ 1f1:	e8 0a fe ff ff       	call   0 <fprintf>
+ 1f6:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+ 1fa:	81 7d fc e8 03 00 00 	cmpl   $0x3e8,-0x4(%rbp)
+ 201:	7e a6                	jle    1a9 <main+0xc3>
+ 203:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 207:	48 8d 15 da 00 00 00 	lea    0xda(%rip),%rdx        # 2e8 <main+0x202>
+ 20e:	48 89 c1             	mov    %rax,%rcx
+ 211:	e8 ea fd ff ff       	call   0 <fprintf>
+ 216:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 21a:	48 8d 15 f0 00 00 00 	lea    0xf0(%rip),%rdx        # 311 <main+0x22b>
+ 221:	48 89 c1             	mov    %rax,%rcx
+ 224:	e8 d7 fd ff ff       	call   0 <fprintf>
+ 229:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 22d:	48 8d 15 fe 00 00 00 	lea    0xfe(%rip),%rdx        # 332 <main+0x24c>
+ 234:	48 89 c1             	mov    %rax,%rcx
+ 237:	e8 c4 fd ff ff       	call   0 <fprintf>
+ 23c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 240:	48 8d 15 10 01 00 00 	lea    0x110(%rip),%rdx        # 357 <main+0x271>
+ 247:	48 89 c1             	mov    %rax,%rcx
+ 24a:	e8 b1 fd ff ff       	call   0 <fprintf>
+ 24f:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 253:	48 8d 15 31 01 00 00 	lea    0x131(%rip),%rdx        # 38b <main+0x2a5>
+ 25a:	48 89 c1             	mov    %rax,%rcx
+ 25d:	e8 9e fd ff ff       	call   0 <fprintf>
+ 262:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 266:	48 8d 15 4b 01 00 00 	lea    0x14b(%rip),%rdx        # 3b8 <main+0x2d2>
+ 26d:	48 89 c1             	mov    %rax,%rcx
+ 270:	e8 8b fd ff ff       	call   0 <fprintf>
+ 275:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 279:	48 8d 15 68 01 00 00 	lea    0x168(%rip),%rdx        # 3e8 <main+0x302>
+ 280:	48 89 c1             	mov    %rax,%rcx
+ 283:	e8 78 fd ff ff       	call   0 <fprintf>
+ 288:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 28c:	48 8d 15 9a 01 00 00 	lea    0x19a(%rip),%rdx        # 42d <main+0x347>
+ 293:	48 89 c1             	mov    %rax,%rcx
+ 296:	e8 65 fd ff ff       	call   0 <fprintf>
+ 29b:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 29f:	48 8d 15 a8 01 00 00 	lea    0x1a8(%rip),%rdx        # 44e <main+0x368>
+ 2a6:	48 89 c1             	mov    %rax,%rcx
+ 2a9:	e8 52 fd ff ff       	call   0 <fprintf>
+ 2ae:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 2b2:	48 8d 15 de 01 00 00 	lea    0x1de(%rip),%rdx        # 497 <main+0x3b1>
+ 2b9:	48 89 c1             	mov    %rax,%rcx
+ 2bc:	e8 3f fd ff ff       	call   0 <fprintf>
+ 2c1:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 2c5:	48 8d 15 e6 01 00 00 	lea    0x1e6(%rip),%rdx        # 4b2 <main+0x3cc>
+ 2cc:	48 89 c1             	mov    %rax,%rcx
+ 2cf:	e8 2c fd ff ff       	call   0 <fprintf>
+ 2d4:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 2d8:	48 8d 15 f5 01 00 00 	lea    0x1f5(%rip),%rdx        # 4d4 <main+0x3ee>
+ 2df:	48 89 c1             	mov    %rax,%rcx
+ 2e2:	e8 19 fd ff ff       	call   0 <fprintf>
+ 2e7:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 2eb:	48 8d 15 f8 01 00 00 	lea    0x1f8(%rip),%rdx        # 4ea <main+0x404>
+ 2f2:	48 89 c1             	mov    %rax,%rcx
+ 2f5:	e8 06 fd ff ff       	call   0 <fprintf>
+ 2fa:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 2fe:	48 89 c1             	mov    %rax,%rcx
+ 301:	e8 00 00 00 00       	call   306 <main+0x220>
+ 306:	48 8d 05 11 02 00 00 	lea    0x211(%rip),%rax        # 51e <main+0x438>
+ 30d:	48 89 c1             	mov    %rax,%rcx
+ 310:	e8 2e fd ff ff       	call   43 <printf>
+ 315:	b8 00 00 00 00       	mov    $0x0,%eax
+ 31a:	48 83 c4 30          	add    $0x30,%rsp
+ 31e:	5d                   	pop    %rbp
+ 31f:	c3                   	ret

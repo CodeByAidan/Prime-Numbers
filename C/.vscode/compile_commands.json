@@ -1,0 +1,22 @@
+[
+  {
+    "directory": "/mnt/d/Other/Primes/C",
+    "file": "main.c",
+    "command": "gcc -Wall -Wextra    main.c   -o main"
+  },
+  {
+    "directory": "/mnt/d/Other/Primes/C",
+    "file": "checkPrime.c",
+    "command": "gcc -Wall -Wextra    checkPrime.c   -o checkPrime"
+  },
+  {
+    "directory": "D:/Other/Primes/C",
+    "file": "main.c",
+    "command": "x86_64-w64-mingw32-gcc -Wall -Wextra    main.c   -o main"
+  },
+  {
+    "directory": "D:/Other/Primes/C",
+    "file": "checkPrime.c",
+    "command": "x86_64-w64-mingw32-gcc -Wall -Wextra    checkPrime.c   -o checkPrime"
+  }
+]

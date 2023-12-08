@@ -1,0 +1,775 @@
+
+checkPrime.o:     file format pe-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <scanf>:
+   0:	55                   	push   %rbp
+   1:	53                   	push   %rbx
+   2:	48 83 ec 38          	sub    $0x38,%rsp
+   6:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+   b:	48 89 4d 20          	mov    %rcx,0x20(%rbp)
+   f:	48 89 55 28          	mov    %rdx,0x28(%rbp)
+  13:	4c 89 45 30          	mov    %r8,0x30(%rbp)
+  17:	4c 89 4d 38          	mov    %r9,0x38(%rbp)
+  1b:	48 8d 45 28          	lea    0x28(%rbp),%rax
+  1f:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  23:	48 8b 5d f0          	mov    -0x10(%rbp),%rbx
+  27:	b9 00 00 00 00       	mov    $0x0,%ecx
+  2c:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 33 <scanf+0x33>
+  33:	ff d0                	call   *%rax
+  35:	48 89 c1             	mov    %rax,%rcx
+  38:	48 8b 45 20          	mov    0x20(%rbp),%rax
+  3c:	49 89 d8             	mov    %rbx,%r8
+  3f:	48 89 c2             	mov    %rax,%rdx
+  42:	e8 00 00 00 00       	call   47 <scanf+0x47>
+  47:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  4a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  4d:	48 83 c4 38          	add    $0x38,%rsp
+  51:	5b                   	pop    %rbx
+  52:	5d                   	pop    %rbp
+  53:	c3                   	ret
+
+0000000000000054 <printf>:
+  54:	55                   	push   %rbp
+  55:	53                   	push   %rbx
+  56:	48 83 ec 38          	sub    $0x38,%rsp
+  5a:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+  5f:	48 89 4d 20          	mov    %rcx,0x20(%rbp)
+  63:	48 89 55 28          	mov    %rdx,0x28(%rbp)
+  67:	4c 89 45 30          	mov    %r8,0x30(%rbp)
+  6b:	4c 89 4d 38          	mov    %r9,0x38(%rbp)
+  6f:	48 8d 45 28          	lea    0x28(%rbp),%rax
+  73:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  77:	48 8b 5d f0          	mov    -0x10(%rbp),%rbx
+  7b:	b9 01 00 00 00       	mov    $0x1,%ecx
+  80:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 87 <printf+0x33>
+  87:	ff d0                	call   *%rax
+  89:	48 89 c1             	mov    %rax,%rcx
+  8c:	48 8b 45 20          	mov    0x20(%rbp),%rax
+  90:	49 89 d8             	mov    %rbx,%r8
+  93:	48 89 c2             	mov    %rax,%rdx
+  96:	e8 00 00 00 00       	call   9b <printf+0x47>
+  9b:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  9e:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  a1:	48 83 c4 38          	add    $0x38,%rsp
+  a5:	5b                   	pop    %rbx
+  a6:	5d                   	pop    %rbp
+  a7:	c3                   	ret
+
+00000000000000a8 <checkPrime>:
+  a8:	55                   	push   %rbp
+  a9:	48 89 e5             	mov    %rsp,%rbp
+  ac:	89 4d 10             	mov    %ecx,0x10(%rbp)
+  af:	83 7d 10 02          	cmpl   $0x2,0x10(%rbp)
+  b3:	75 0a                	jne    bf <checkPrime+0x17>
+  b5:	b8 01 00 00 00       	mov    $0x1,%eax
+  ba:	e9 f8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+  bf:	83 7d 10 03          	cmpl   $0x3,0x10(%rbp)
+  c3:	75 0a                	jne    cf <checkPrime+0x27>
+  c5:	b8 01 00 00 00       	mov    $0x1,%eax
+  ca:	e9 e8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+  cf:	83 7d 10 05          	cmpl   $0x5,0x10(%rbp)
+  d3:	75 0a                	jne    df <checkPrime+0x37>
+  d5:	b8 01 00 00 00       	mov    $0x1,%eax
+  da:	e9 d8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+  df:	83 7d 10 07          	cmpl   $0x7,0x10(%rbp)
+  e3:	75 0a                	jne    ef <checkPrime+0x47>
+  e5:	b8 01 00 00 00       	mov    $0x1,%eax
+  ea:	e9 c8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+  ef:	83 7d 10 0b          	cmpl   $0xb,0x10(%rbp)
+  f3:	75 0a                	jne    ff <checkPrime+0x57>
+  f5:	b8 01 00 00 00       	mov    $0x1,%eax
+  fa:	e9 b8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+  ff:	83 7d 10 0d          	cmpl   $0xd,0x10(%rbp)
+ 103:	75 0a                	jne    10f <checkPrime+0x67>
+ 105:	b8 01 00 00 00       	mov    $0x1,%eax
+ 10a:	e9 a8 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 10f:	83 7d 10 11          	cmpl   $0x11,0x10(%rbp)
+ 113:	75 0a                	jne    11f <checkPrime+0x77>
+ 115:	b8 01 00 00 00       	mov    $0x1,%eax
+ 11a:	e9 98 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 11f:	83 7d 10 13          	cmpl   $0x13,0x10(%rbp)
+ 123:	75 0a                	jne    12f <checkPrime+0x87>
+ 125:	b8 01 00 00 00       	mov    $0x1,%eax
+ 12a:	e9 88 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 12f:	83 7d 10 17          	cmpl   $0x17,0x10(%rbp)
+ 133:	75 0a                	jne    13f <checkPrime+0x97>
+ 135:	b8 01 00 00 00       	mov    $0x1,%eax
+ 13a:	e9 78 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 13f:	83 7d 10 1d          	cmpl   $0x1d,0x10(%rbp)
+ 143:	75 0a                	jne    14f <checkPrime+0xa7>
+ 145:	b8 01 00 00 00       	mov    $0x1,%eax
+ 14a:	e9 68 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 14f:	83 7d 10 1f          	cmpl   $0x1f,0x10(%rbp)
+ 153:	75 0a                	jne    15f <checkPrime+0xb7>
+ 155:	b8 01 00 00 00       	mov    $0x1,%eax
+ 15a:	e9 58 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 15f:	83 7d 10 25          	cmpl   $0x25,0x10(%rbp)
+ 163:	75 0a                	jne    16f <checkPrime+0xc7>
+ 165:	b8 01 00 00 00       	mov    $0x1,%eax
+ 16a:	e9 48 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 16f:	83 7d 10 29          	cmpl   $0x29,0x10(%rbp)
+ 173:	75 0a                	jne    17f <checkPrime+0xd7>
+ 175:	b8 01 00 00 00       	mov    $0x1,%eax
+ 17a:	e9 38 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 17f:	83 7d 10 2b          	cmpl   $0x2b,0x10(%rbp)
+ 183:	75 0a                	jne    18f <checkPrime+0xe7>
+ 185:	b8 01 00 00 00       	mov    $0x1,%eax
+ 18a:	e9 28 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 18f:	83 7d 10 2f          	cmpl   $0x2f,0x10(%rbp)
+ 193:	75 0a                	jne    19f <checkPrime+0xf7>
+ 195:	b8 01 00 00 00       	mov    $0x1,%eax
+ 19a:	e9 18 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 19f:	83 7d 10 35          	cmpl   $0x35,0x10(%rbp)
+ 1a3:	75 0a                	jne    1af <checkPrime+0x107>
+ 1a5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1aa:	e9 08 0b 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1af:	83 7d 10 3b          	cmpl   $0x3b,0x10(%rbp)
+ 1b3:	75 0a                	jne    1bf <checkPrime+0x117>
+ 1b5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1ba:	e9 f8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1bf:	83 7d 10 3d          	cmpl   $0x3d,0x10(%rbp)
+ 1c3:	75 0a                	jne    1cf <checkPrime+0x127>
+ 1c5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1ca:	e9 e8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1cf:	83 7d 10 43          	cmpl   $0x43,0x10(%rbp)
+ 1d3:	75 0a                	jne    1df <checkPrime+0x137>
+ 1d5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1da:	e9 d8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1df:	83 7d 10 47          	cmpl   $0x47,0x10(%rbp)
+ 1e3:	75 0a                	jne    1ef <checkPrime+0x147>
+ 1e5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1ea:	e9 c8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1ef:	83 7d 10 49          	cmpl   $0x49,0x10(%rbp)
+ 1f3:	75 0a                	jne    1ff <checkPrime+0x157>
+ 1f5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1fa:	e9 b8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 1ff:	83 7d 10 4f          	cmpl   $0x4f,0x10(%rbp)
+ 203:	75 0a                	jne    20f <checkPrime+0x167>
+ 205:	b8 01 00 00 00       	mov    $0x1,%eax
+ 20a:	e9 a8 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 20f:	83 7d 10 53          	cmpl   $0x53,0x10(%rbp)
+ 213:	75 0a                	jne    21f <checkPrime+0x177>
+ 215:	b8 01 00 00 00       	mov    $0x1,%eax
+ 21a:	e9 98 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 21f:	83 7d 10 59          	cmpl   $0x59,0x10(%rbp)
+ 223:	75 0a                	jne    22f <checkPrime+0x187>
+ 225:	b8 01 00 00 00       	mov    $0x1,%eax
+ 22a:	e9 88 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 22f:	83 7d 10 61          	cmpl   $0x61,0x10(%rbp)
+ 233:	75 0a                	jne    23f <checkPrime+0x197>
+ 235:	b8 01 00 00 00       	mov    $0x1,%eax
+ 23a:	e9 78 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 23f:	83 7d 10 65          	cmpl   $0x65,0x10(%rbp)
+ 243:	75 0a                	jne    24f <checkPrime+0x1a7>
+ 245:	b8 01 00 00 00       	mov    $0x1,%eax
+ 24a:	e9 68 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 24f:	83 7d 10 67          	cmpl   $0x67,0x10(%rbp)
+ 253:	75 0a                	jne    25f <checkPrime+0x1b7>
+ 255:	b8 01 00 00 00       	mov    $0x1,%eax
+ 25a:	e9 58 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 25f:	83 7d 10 6b          	cmpl   $0x6b,0x10(%rbp)
+ 263:	75 0a                	jne    26f <checkPrime+0x1c7>
+ 265:	b8 01 00 00 00       	mov    $0x1,%eax
+ 26a:	e9 48 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 26f:	83 7d 10 6d          	cmpl   $0x6d,0x10(%rbp)
+ 273:	75 0a                	jne    27f <checkPrime+0x1d7>
+ 275:	b8 01 00 00 00       	mov    $0x1,%eax
+ 27a:	e9 38 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 27f:	83 7d 10 71          	cmpl   $0x71,0x10(%rbp)
+ 283:	75 0a                	jne    28f <checkPrime+0x1e7>
+ 285:	b8 01 00 00 00       	mov    $0x1,%eax
+ 28a:	e9 28 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 28f:	83 7d 10 7f          	cmpl   $0x7f,0x10(%rbp)
+ 293:	75 0a                	jne    29f <checkPrime+0x1f7>
+ 295:	b8 01 00 00 00       	mov    $0x1,%eax
+ 29a:	e9 18 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 29f:	81 7d 10 83 00 00 00 	cmpl   $0x83,0x10(%rbp)
+ 2a6:	75 0a                	jne    2b2 <checkPrime+0x20a>
+ 2a8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2ad:	e9 05 0a 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 2b2:	81 7d 10 89 00 00 00 	cmpl   $0x89,0x10(%rbp)
+ 2b9:	75 0a                	jne    2c5 <checkPrime+0x21d>
+ 2bb:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2c0:	e9 f2 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 2c5:	81 7d 10 8b 00 00 00 	cmpl   $0x8b,0x10(%rbp)
+ 2cc:	75 0a                	jne    2d8 <checkPrime+0x230>
+ 2ce:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2d3:	e9 df 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 2d8:	81 7d 10 95 00 00 00 	cmpl   $0x95,0x10(%rbp)
+ 2df:	75 0a                	jne    2eb <checkPrime+0x243>
+ 2e1:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2e6:	e9 cc 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 2eb:	81 7d 10 97 00 00 00 	cmpl   $0x97,0x10(%rbp)
+ 2f2:	75 0a                	jne    2fe <checkPrime+0x256>
+ 2f4:	b8 01 00 00 00       	mov    $0x1,%eax
+ 2f9:	e9 b9 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 2fe:	81 7d 10 9d 00 00 00 	cmpl   $0x9d,0x10(%rbp)
+ 305:	75 0a                	jne    311 <checkPrime+0x269>
+ 307:	b8 01 00 00 00       	mov    $0x1,%eax
+ 30c:	e9 a6 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 311:	81 7d 10 a3 00 00 00 	cmpl   $0xa3,0x10(%rbp)
+ 318:	75 0a                	jne    324 <checkPrime+0x27c>
+ 31a:	b8 01 00 00 00       	mov    $0x1,%eax
+ 31f:	e9 93 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 324:	81 7d 10 a7 00 00 00 	cmpl   $0xa7,0x10(%rbp)
+ 32b:	75 0a                	jne    337 <checkPrime+0x28f>
+ 32d:	b8 01 00 00 00       	mov    $0x1,%eax
+ 332:	e9 80 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 337:	81 7d 10 ad 00 00 00 	cmpl   $0xad,0x10(%rbp)
+ 33e:	75 0a                	jne    34a <checkPrime+0x2a2>
+ 340:	b8 01 00 00 00       	mov    $0x1,%eax
+ 345:	e9 6d 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 34a:	81 7d 10 b3 00 00 00 	cmpl   $0xb3,0x10(%rbp)
+ 351:	75 0a                	jne    35d <checkPrime+0x2b5>
+ 353:	b8 01 00 00 00       	mov    $0x1,%eax
+ 358:	e9 5a 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 35d:	81 7d 10 b5 00 00 00 	cmpl   $0xb5,0x10(%rbp)
+ 364:	75 0a                	jne    370 <checkPrime+0x2c8>
+ 366:	b8 01 00 00 00       	mov    $0x1,%eax
+ 36b:	e9 47 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 370:	81 7d 10 bf 00 00 00 	cmpl   $0xbf,0x10(%rbp)
+ 377:	75 0a                	jne    383 <checkPrime+0x2db>
+ 379:	b8 01 00 00 00       	mov    $0x1,%eax
+ 37e:	e9 34 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 383:	81 7d 10 c1 00 00 00 	cmpl   $0xc1,0x10(%rbp)
+ 38a:	75 0a                	jne    396 <checkPrime+0x2ee>
+ 38c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 391:	e9 21 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 396:	81 7d 10 c5 00 00 00 	cmpl   $0xc5,0x10(%rbp)
+ 39d:	75 0a                	jne    3a9 <checkPrime+0x301>
+ 39f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 3a4:	e9 0e 09 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 3a9:	81 7d 10 c7 00 00 00 	cmpl   $0xc7,0x10(%rbp)
+ 3b0:	75 0a                	jne    3bc <checkPrime+0x314>
+ 3b2:	b8 01 00 00 00       	mov    $0x1,%eax
+ 3b7:	e9 fb 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 3bc:	81 7d 10 d3 00 00 00 	cmpl   $0xd3,0x10(%rbp)
+ 3c3:	75 0a                	jne    3cf <checkPrime+0x327>
+ 3c5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 3ca:	e9 e8 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 3cf:	81 7d 10 df 00 00 00 	cmpl   $0xdf,0x10(%rbp)
+ 3d6:	75 0a                	jne    3e2 <checkPrime+0x33a>
+ 3d8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 3dd:	e9 d5 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 3e2:	81 7d 10 e3 00 00 00 	cmpl   $0xe3,0x10(%rbp)
+ 3e9:	75 0a                	jne    3f5 <checkPrime+0x34d>
+ 3eb:	b8 01 00 00 00       	mov    $0x1,%eax
+ 3f0:	e9 c2 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 3f5:	81 7d 10 e5 00 00 00 	cmpl   $0xe5,0x10(%rbp)
+ 3fc:	75 0a                	jne    408 <checkPrime+0x360>
+ 3fe:	b8 01 00 00 00       	mov    $0x1,%eax
+ 403:	e9 af 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 408:	81 7d 10 e9 00 00 00 	cmpl   $0xe9,0x10(%rbp)
+ 40f:	75 0a                	jne    41b <checkPrime+0x373>
+ 411:	b8 01 00 00 00       	mov    $0x1,%eax
+ 416:	e9 9c 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 41b:	81 7d 10 ef 00 00 00 	cmpl   $0xef,0x10(%rbp)
+ 422:	75 0a                	jne    42e <checkPrime+0x386>
+ 424:	b8 01 00 00 00       	mov    $0x1,%eax
+ 429:	e9 89 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 42e:	81 7d 10 f1 00 00 00 	cmpl   $0xf1,0x10(%rbp)
+ 435:	75 0a                	jne    441 <checkPrime+0x399>
+ 437:	b8 01 00 00 00       	mov    $0x1,%eax
+ 43c:	e9 76 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 441:	81 7d 10 fb 00 00 00 	cmpl   $0xfb,0x10(%rbp)
+ 448:	75 0a                	jne    454 <checkPrime+0x3ac>
+ 44a:	b8 01 00 00 00       	mov    $0x1,%eax
+ 44f:	e9 63 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 454:	81 7d 10 01 01 00 00 	cmpl   $0x101,0x10(%rbp)
+ 45b:	75 0a                	jne    467 <checkPrime+0x3bf>
+ 45d:	b8 01 00 00 00       	mov    $0x1,%eax
+ 462:	e9 50 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 467:	81 7d 10 07 01 00 00 	cmpl   $0x107,0x10(%rbp)
+ 46e:	75 0a                	jne    47a <checkPrime+0x3d2>
+ 470:	b8 01 00 00 00       	mov    $0x1,%eax
+ 475:	e9 3d 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 47a:	81 7d 10 0d 01 00 00 	cmpl   $0x10d,0x10(%rbp)
+ 481:	75 0a                	jne    48d <checkPrime+0x3e5>
+ 483:	b8 01 00 00 00       	mov    $0x1,%eax
+ 488:	e9 2a 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 48d:	81 7d 10 0f 01 00 00 	cmpl   $0x10f,0x10(%rbp)
+ 494:	75 0a                	jne    4a0 <checkPrime+0x3f8>
+ 496:	b8 01 00 00 00       	mov    $0x1,%eax
+ 49b:	e9 17 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4a0:	81 7d 10 15 01 00 00 	cmpl   $0x115,0x10(%rbp)
+ 4a7:	75 0a                	jne    4b3 <checkPrime+0x40b>
+ 4a9:	b8 01 00 00 00       	mov    $0x1,%eax
+ 4ae:	e9 04 08 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4b3:	81 7d 10 19 01 00 00 	cmpl   $0x119,0x10(%rbp)
+ 4ba:	75 0a                	jne    4c6 <checkPrime+0x41e>
+ 4bc:	b8 01 00 00 00       	mov    $0x1,%eax
+ 4c1:	e9 f1 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4c6:	81 7d 10 1b 01 00 00 	cmpl   $0x11b,0x10(%rbp)
+ 4cd:	75 0a                	jne    4d9 <checkPrime+0x431>
+ 4cf:	b8 01 00 00 00       	mov    $0x1,%eax
+ 4d4:	e9 de 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4d9:	81 7d 10 25 01 00 00 	cmpl   $0x125,0x10(%rbp)
+ 4e0:	75 0a                	jne    4ec <checkPrime+0x444>
+ 4e2:	b8 01 00 00 00       	mov    $0x1,%eax
+ 4e7:	e9 cb 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4ec:	81 7d 10 33 01 00 00 	cmpl   $0x133,0x10(%rbp)
+ 4f3:	75 0a                	jne    4ff <checkPrime+0x457>
+ 4f5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 4fa:	e9 b8 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 4ff:	81 7d 10 37 01 00 00 	cmpl   $0x137,0x10(%rbp)
+ 506:	75 0a                	jne    512 <checkPrime+0x46a>
+ 508:	b8 01 00 00 00       	mov    $0x1,%eax
+ 50d:	e9 a5 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 512:	81 7d 10 39 01 00 00 	cmpl   $0x139,0x10(%rbp)
+ 519:	75 0a                	jne    525 <checkPrime+0x47d>
+ 51b:	b8 01 00 00 00       	mov    $0x1,%eax
+ 520:	e9 92 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 525:	81 7d 10 3d 01 00 00 	cmpl   $0x13d,0x10(%rbp)
+ 52c:	75 0a                	jne    538 <checkPrime+0x490>
+ 52e:	b8 01 00 00 00       	mov    $0x1,%eax
+ 533:	e9 7f 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 538:	81 7d 10 4b 01 00 00 	cmpl   $0x14b,0x10(%rbp)
+ 53f:	75 0a                	jne    54b <checkPrime+0x4a3>
+ 541:	b8 01 00 00 00       	mov    $0x1,%eax
+ 546:	e9 6c 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 54b:	81 7d 10 51 01 00 00 	cmpl   $0x151,0x10(%rbp)
+ 552:	75 0a                	jne    55e <checkPrime+0x4b6>
+ 554:	b8 01 00 00 00       	mov    $0x1,%eax
+ 559:	e9 59 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 55e:	81 7d 10 5b 01 00 00 	cmpl   $0x15b,0x10(%rbp)
+ 565:	75 0a                	jne    571 <checkPrime+0x4c9>
+ 567:	b8 01 00 00 00       	mov    $0x1,%eax
+ 56c:	e9 46 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 571:	81 7d 10 5d 01 00 00 	cmpl   $0x15d,0x10(%rbp)
+ 578:	75 0a                	jne    584 <checkPrime+0x4dc>
+ 57a:	b8 01 00 00 00       	mov    $0x1,%eax
+ 57f:	e9 33 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 584:	81 7d 10 61 01 00 00 	cmpl   $0x161,0x10(%rbp)
+ 58b:	75 0a                	jne    597 <checkPrime+0x4ef>
+ 58d:	b8 01 00 00 00       	mov    $0x1,%eax
+ 592:	e9 20 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 597:	81 7d 10 67 01 00 00 	cmpl   $0x167,0x10(%rbp)
+ 59e:	75 0a                	jne    5aa <checkPrime+0x502>
+ 5a0:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5a5:	e9 0d 07 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 5aa:	81 7d 10 6f 01 00 00 	cmpl   $0x16f,0x10(%rbp)
+ 5b1:	75 0a                	jne    5bd <checkPrime+0x515>
+ 5b3:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5b8:	e9 fa 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 5bd:	81 7d 10 75 01 00 00 	cmpl   $0x175,0x10(%rbp)
+ 5c4:	75 0a                	jne    5d0 <checkPrime+0x528>
+ 5c6:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5cb:	e9 e7 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 5d0:	81 7d 10 7b 01 00 00 	cmpl   $0x17b,0x10(%rbp)
+ 5d7:	75 0a                	jne    5e3 <checkPrime+0x53b>
+ 5d9:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5de:	e9 d4 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 5e3:	81 7d 10 7f 01 00 00 	cmpl   $0x17f,0x10(%rbp)
+ 5ea:	75 0a                	jne    5f6 <checkPrime+0x54e>
+ 5ec:	b8 01 00 00 00       	mov    $0x1,%eax
+ 5f1:	e9 c1 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 5f6:	81 7d 10 85 01 00 00 	cmpl   $0x185,0x10(%rbp)
+ 5fd:	75 0a                	jne    609 <checkPrime+0x561>
+ 5ff:	b8 01 00 00 00       	mov    $0x1,%eax
+ 604:	e9 ae 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 609:	81 7d 10 8d 01 00 00 	cmpl   $0x18d,0x10(%rbp)
+ 610:	75 0a                	jne    61c <checkPrime+0x574>
+ 612:	b8 01 00 00 00       	mov    $0x1,%eax
+ 617:	e9 9b 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 61c:	81 7d 10 91 01 00 00 	cmpl   $0x191,0x10(%rbp)
+ 623:	75 0a                	jne    62f <checkPrime+0x587>
+ 625:	b8 01 00 00 00       	mov    $0x1,%eax
+ 62a:	e9 88 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 62f:	81 7d 10 99 01 00 00 	cmpl   $0x199,0x10(%rbp)
+ 636:	75 0a                	jne    642 <checkPrime+0x59a>
+ 638:	b8 01 00 00 00       	mov    $0x1,%eax
+ 63d:	e9 75 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 642:	81 7d 10 a3 01 00 00 	cmpl   $0x1a3,0x10(%rbp)
+ 649:	75 0a                	jne    655 <checkPrime+0x5ad>
+ 64b:	b8 01 00 00 00       	mov    $0x1,%eax
+ 650:	e9 62 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 655:	81 7d 10 a5 01 00 00 	cmpl   $0x1a5,0x10(%rbp)
+ 65c:	75 0a                	jne    668 <checkPrime+0x5c0>
+ 65e:	b8 01 00 00 00       	mov    $0x1,%eax
+ 663:	e9 4f 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 668:	81 7d 10 af 01 00 00 	cmpl   $0x1af,0x10(%rbp)
+ 66f:	75 0a                	jne    67b <checkPrime+0x5d3>
+ 671:	b8 01 00 00 00       	mov    $0x1,%eax
+ 676:	e9 3c 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 67b:	81 7d 10 b1 01 00 00 	cmpl   $0x1b1,0x10(%rbp)
+ 682:	75 0a                	jne    68e <checkPrime+0x5e6>
+ 684:	b8 01 00 00 00       	mov    $0x1,%eax
+ 689:	e9 29 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 68e:	81 7d 10 b7 01 00 00 	cmpl   $0x1b7,0x10(%rbp)
+ 695:	75 0a                	jne    6a1 <checkPrime+0x5f9>
+ 697:	b8 01 00 00 00       	mov    $0x1,%eax
+ 69c:	e9 16 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 6a1:	81 7d 10 bb 01 00 00 	cmpl   $0x1bb,0x10(%rbp)
+ 6a8:	75 0a                	jne    6b4 <checkPrime+0x60c>
+ 6aa:	b8 01 00 00 00       	mov    $0x1,%eax
+ 6af:	e9 03 06 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 6b4:	81 7d 10 c1 01 00 00 	cmpl   $0x1c1,0x10(%rbp)
+ 6bb:	75 0a                	jne    6c7 <checkPrime+0x61f>
+ 6bd:	b8 01 00 00 00       	mov    $0x1,%eax
+ 6c2:	e9 f0 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 6c7:	81 7d 10 c9 01 00 00 	cmpl   $0x1c9,0x10(%rbp)
+ 6ce:	75 0a                	jne    6da <checkPrime+0x632>
+ 6d0:	b8 01 00 00 00       	mov    $0x1,%eax
+ 6d5:	e9 dd 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 6da:	81 7d 10 cd 01 00 00 	cmpl   $0x1cd,0x10(%rbp)
+ 6e1:	75 0a                	jne    6ed <checkPrime+0x645>
+ 6e3:	b8 01 00 00 00       	mov    $0x1,%eax
+ 6e8:	e9 ca 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 6ed:	81 7d 10 cf 01 00 00 	cmpl   $0x1cf,0x10(%rbp)
+ 6f4:	75 0a                	jne    700 <checkPrime+0x658>
+ 6f6:	b8 01 00 00 00       	mov    $0x1,%eax
+ 6fb:	e9 b7 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 700:	81 7d 10 d3 01 00 00 	cmpl   $0x1d3,0x10(%rbp)
+ 707:	75 0a                	jne    713 <checkPrime+0x66b>
+ 709:	b8 01 00 00 00       	mov    $0x1,%eax
+ 70e:	e9 a4 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 713:	81 7d 10 df 01 00 00 	cmpl   $0x1df,0x10(%rbp)
+ 71a:	75 0a                	jne    726 <checkPrime+0x67e>
+ 71c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 721:	e9 91 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 726:	81 7d 10 e7 01 00 00 	cmpl   $0x1e7,0x10(%rbp)
+ 72d:	75 0a                	jne    739 <checkPrime+0x691>
+ 72f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 734:	e9 7e 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 739:	81 7d 10 eb 01 00 00 	cmpl   $0x1eb,0x10(%rbp)
+ 740:	75 0a                	jne    74c <checkPrime+0x6a4>
+ 742:	b8 01 00 00 00       	mov    $0x1,%eax
+ 747:	e9 6b 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 74c:	81 7d 10 f3 01 00 00 	cmpl   $0x1f3,0x10(%rbp)
+ 753:	75 0a                	jne    75f <checkPrime+0x6b7>
+ 755:	b8 01 00 00 00       	mov    $0x1,%eax
+ 75a:	e9 58 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 75f:	81 7d 10 f7 01 00 00 	cmpl   $0x1f7,0x10(%rbp)
+ 766:	75 0a                	jne    772 <checkPrime+0x6ca>
+ 768:	b8 01 00 00 00       	mov    $0x1,%eax
+ 76d:	e9 45 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 772:	81 7d 10 fd 01 00 00 	cmpl   $0x1fd,0x10(%rbp)
+ 779:	75 0a                	jne    785 <checkPrime+0x6dd>
+ 77b:	b8 01 00 00 00       	mov    $0x1,%eax
+ 780:	e9 32 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 785:	81 7d 10 09 02 00 00 	cmpl   $0x209,0x10(%rbp)
+ 78c:	75 0a                	jne    798 <checkPrime+0x6f0>
+ 78e:	b8 01 00 00 00       	mov    $0x1,%eax
+ 793:	e9 1f 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 798:	81 7d 10 0b 02 00 00 	cmpl   $0x20b,0x10(%rbp)
+ 79f:	75 0a                	jne    7ab <checkPrime+0x703>
+ 7a1:	b8 01 00 00 00       	mov    $0x1,%eax
+ 7a6:	e9 0c 05 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 7ab:	81 7d 10 1d 02 00 00 	cmpl   $0x21d,0x10(%rbp)
+ 7b2:	75 0a                	jne    7be <checkPrime+0x716>
+ 7b4:	b8 01 00 00 00       	mov    $0x1,%eax
+ 7b9:	e9 f9 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 7be:	81 7d 10 23 02 00 00 	cmpl   $0x223,0x10(%rbp)
+ 7c5:	75 0a                	jne    7d1 <checkPrime+0x729>
+ 7c7:	b8 01 00 00 00       	mov    $0x1,%eax
+ 7cc:	e9 e6 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 7d1:	81 7d 10 2d 02 00 00 	cmpl   $0x22d,0x10(%rbp)
+ 7d8:	75 0a                	jne    7e4 <checkPrime+0x73c>
+ 7da:	b8 01 00 00 00       	mov    $0x1,%eax
+ 7df:	e9 d3 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 7e4:	81 7d 10 33 02 00 00 	cmpl   $0x233,0x10(%rbp)
+ 7eb:	75 0a                	jne    7f7 <checkPrime+0x74f>
+ 7ed:	b8 01 00 00 00       	mov    $0x1,%eax
+ 7f2:	e9 c0 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 7f7:	81 7d 10 39 02 00 00 	cmpl   $0x239,0x10(%rbp)
+ 7fe:	75 0a                	jne    80a <checkPrime+0x762>
+ 800:	b8 01 00 00 00       	mov    $0x1,%eax
+ 805:	e9 ad 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 80a:	81 7d 10 3b 02 00 00 	cmpl   $0x23b,0x10(%rbp)
+ 811:	75 0a                	jne    81d <checkPrime+0x775>
+ 813:	b8 01 00 00 00       	mov    $0x1,%eax
+ 818:	e9 9a 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 81d:	81 7d 10 41 02 00 00 	cmpl   $0x241,0x10(%rbp)
+ 824:	75 0a                	jne    830 <checkPrime+0x788>
+ 826:	b8 01 00 00 00       	mov    $0x1,%eax
+ 82b:	e9 87 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 830:	81 7d 10 4b 02 00 00 	cmpl   $0x24b,0x10(%rbp)
+ 837:	75 0a                	jne    843 <checkPrime+0x79b>
+ 839:	b8 01 00 00 00       	mov    $0x1,%eax
+ 83e:	e9 74 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 843:	81 7d 10 51 02 00 00 	cmpl   $0x251,0x10(%rbp)
+ 84a:	75 0a                	jne    856 <checkPrime+0x7ae>
+ 84c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 851:	e9 61 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 856:	81 7d 10 57 02 00 00 	cmpl   $0x257,0x10(%rbp)
+ 85d:	75 0a                	jne    869 <checkPrime+0x7c1>
+ 85f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 864:	e9 4e 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 869:	81 7d 10 59 02 00 00 	cmpl   $0x259,0x10(%rbp)
+ 870:	75 0a                	jne    87c <checkPrime+0x7d4>
+ 872:	b8 01 00 00 00       	mov    $0x1,%eax
+ 877:	e9 3b 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 87c:	81 7d 10 5f 02 00 00 	cmpl   $0x25f,0x10(%rbp)
+ 883:	75 0a                	jne    88f <checkPrime+0x7e7>
+ 885:	b8 01 00 00 00       	mov    $0x1,%eax
+ 88a:	e9 28 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 88f:	81 7d 10 65 02 00 00 	cmpl   $0x265,0x10(%rbp)
+ 896:	75 0a                	jne    8a2 <checkPrime+0x7fa>
+ 898:	b8 01 00 00 00       	mov    $0x1,%eax
+ 89d:	e9 15 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 8a2:	81 7d 10 69 02 00 00 	cmpl   $0x269,0x10(%rbp)
+ 8a9:	75 0a                	jne    8b5 <checkPrime+0x80d>
+ 8ab:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8b0:	e9 02 04 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 8b5:	81 7d 10 6b 02 00 00 	cmpl   $0x26b,0x10(%rbp)
+ 8bc:	75 0a                	jne    8c8 <checkPrime+0x820>
+ 8be:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8c3:	e9 ef 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 8c8:	81 7d 10 77 02 00 00 	cmpl   $0x277,0x10(%rbp)
+ 8cf:	75 0a                	jne    8db <checkPrime+0x833>
+ 8d1:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8d6:	e9 dc 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 8db:	81 7d 10 81 02 00 00 	cmpl   $0x281,0x10(%rbp)
+ 8e2:	75 0a                	jne    8ee <checkPrime+0x846>
+ 8e4:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8e9:	e9 c9 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 8ee:	81 7d 10 83 02 00 00 	cmpl   $0x283,0x10(%rbp)
+ 8f5:	75 0a                	jne    901 <checkPrime+0x859>
+ 8f7:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8fc:	e9 b6 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 901:	81 7d 10 87 02 00 00 	cmpl   $0x287,0x10(%rbp)
+ 908:	75 0a                	jne    914 <checkPrime+0x86c>
+ 90a:	b8 01 00 00 00       	mov    $0x1,%eax
+ 90f:	e9 a3 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 914:	81 7d 10 8d 02 00 00 	cmpl   $0x28d,0x10(%rbp)
+ 91b:	75 0a                	jne    927 <checkPrime+0x87f>
+ 91d:	b8 01 00 00 00       	mov    $0x1,%eax
+ 922:	e9 90 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 927:	81 7d 10 93 02 00 00 	cmpl   $0x293,0x10(%rbp)
+ 92e:	75 0a                	jne    93a <checkPrime+0x892>
+ 930:	b8 01 00 00 00       	mov    $0x1,%eax
+ 935:	e9 7d 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 93a:	81 7d 10 95 02 00 00 	cmpl   $0x295,0x10(%rbp)
+ 941:	75 0a                	jne    94d <checkPrime+0x8a5>
+ 943:	b8 01 00 00 00       	mov    $0x1,%eax
+ 948:	e9 6a 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 94d:	81 7d 10 a1 02 00 00 	cmpl   $0x2a1,0x10(%rbp)
+ 954:	75 0a                	jne    960 <checkPrime+0x8b8>
+ 956:	b8 01 00 00 00       	mov    $0x1,%eax
+ 95b:	e9 57 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 960:	81 7d 10 a5 02 00 00 	cmpl   $0x2a5,0x10(%rbp)
+ 967:	75 0a                	jne    973 <checkPrime+0x8cb>
+ 969:	b8 01 00 00 00       	mov    $0x1,%eax
+ 96e:	e9 44 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 973:	81 7d 10 ab 02 00 00 	cmpl   $0x2ab,0x10(%rbp)
+ 97a:	75 0a                	jne    986 <checkPrime+0x8de>
+ 97c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 981:	e9 31 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 986:	81 7d 10 b3 02 00 00 	cmpl   $0x2b3,0x10(%rbp)
+ 98d:	75 0a                	jne    999 <checkPrime+0x8f1>
+ 98f:	b8 01 00 00 00       	mov    $0x1,%eax
+ 994:	e9 1e 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 999:	81 7d 10 bd 02 00 00 	cmpl   $0x2bd,0x10(%rbp)
+ 9a0:	75 0a                	jne    9ac <checkPrime+0x904>
+ 9a2:	b8 01 00 00 00       	mov    $0x1,%eax
+ 9a7:	e9 0b 03 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 9ac:	81 7d 10 c5 02 00 00 	cmpl   $0x2c5,0x10(%rbp)
+ 9b3:	75 0a                	jne    9bf <checkPrime+0x917>
+ 9b5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 9ba:	e9 f8 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 9bf:	81 7d 10 cf 02 00 00 	cmpl   $0x2cf,0x10(%rbp)
+ 9c6:	75 0a                	jne    9d2 <checkPrime+0x92a>
+ 9c8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 9cd:	e9 e5 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 9d2:	81 7d 10 d7 02 00 00 	cmpl   $0x2d7,0x10(%rbp)
+ 9d9:	75 0a                	jne    9e5 <checkPrime+0x93d>
+ 9db:	b8 01 00 00 00       	mov    $0x1,%eax
+ 9e0:	e9 d2 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 9e5:	81 7d 10 dd 02 00 00 	cmpl   $0x2dd,0x10(%rbp)
+ 9ec:	75 0a                	jne    9f8 <checkPrime+0x950>
+ 9ee:	b8 01 00 00 00       	mov    $0x1,%eax
+ 9f3:	e9 bf 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ 9f8:	81 7d 10 e3 02 00 00 	cmpl   $0x2e3,0x10(%rbp)
+ 9ff:	75 0a                	jne    a0b <checkPrime+0x963>
+ a01:	b8 01 00 00 00       	mov    $0x1,%eax
+ a06:	e9 ac 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a0b:	81 7d 10 e7 02 00 00 	cmpl   $0x2e7,0x10(%rbp)
+ a12:	75 0a                	jne    a1e <checkPrime+0x976>
+ a14:	b8 01 00 00 00       	mov    $0x1,%eax
+ a19:	e9 99 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a1e:	81 7d 10 ef 02 00 00 	cmpl   $0x2ef,0x10(%rbp)
+ a25:	75 0a                	jne    a31 <checkPrime+0x989>
+ a27:	b8 01 00 00 00       	mov    $0x1,%eax
+ a2c:	e9 86 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a31:	81 7d 10 f5 02 00 00 	cmpl   $0x2f5,0x10(%rbp)
+ a38:	75 0a                	jne    a44 <checkPrime+0x99c>
+ a3a:	b8 01 00 00 00       	mov    $0x1,%eax
+ a3f:	e9 73 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a44:	81 7d 10 f9 02 00 00 	cmpl   $0x2f9,0x10(%rbp)
+ a4b:	75 0a                	jne    a57 <checkPrime+0x9af>
+ a4d:	b8 01 00 00 00       	mov    $0x1,%eax
+ a52:	e9 60 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a57:	81 7d 10 01 03 00 00 	cmpl   $0x301,0x10(%rbp)
+ a5e:	75 0a                	jne    a6a <checkPrime+0x9c2>
+ a60:	b8 01 00 00 00       	mov    $0x1,%eax
+ a65:	e9 4d 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a6a:	81 7d 10 05 03 00 00 	cmpl   $0x305,0x10(%rbp)
+ a71:	75 0a                	jne    a7d <checkPrime+0x9d5>
+ a73:	b8 01 00 00 00       	mov    $0x1,%eax
+ a78:	e9 3a 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a7d:	81 7d 10 13 03 00 00 	cmpl   $0x313,0x10(%rbp)
+ a84:	75 0a                	jne    a90 <checkPrime+0x9e8>
+ a86:	b8 01 00 00 00       	mov    $0x1,%eax
+ a8b:	e9 27 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ a90:	81 7d 10 1d 03 00 00 	cmpl   $0x31d,0x10(%rbp)
+ a97:	75 0a                	jne    aa3 <checkPrime+0x9fb>
+ a99:	b8 01 00 00 00       	mov    $0x1,%eax
+ a9e:	e9 14 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ aa3:	81 7d 10 29 03 00 00 	cmpl   $0x329,0x10(%rbp)
+ aaa:	75 0a                	jne    ab6 <checkPrime+0xa0e>
+ aac:	b8 01 00 00 00       	mov    $0x1,%eax
+ ab1:	e9 01 02 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ ab6:	81 7d 10 2b 03 00 00 	cmpl   $0x32b,0x10(%rbp)
+ abd:	75 0a                	jne    ac9 <checkPrime+0xa21>
+ abf:	b8 01 00 00 00       	mov    $0x1,%eax
+ ac4:	e9 ee 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ ac9:	81 7d 10 35 03 00 00 	cmpl   $0x335,0x10(%rbp)
+ ad0:	75 0a                	jne    adc <checkPrime+0xa34>
+ ad2:	b8 01 00 00 00       	mov    $0x1,%eax
+ ad7:	e9 db 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ adc:	81 7d 10 37 03 00 00 	cmpl   $0x337,0x10(%rbp)
+ ae3:	75 0a                	jne    aef <checkPrime+0xa47>
+ ae5:	b8 01 00 00 00       	mov    $0x1,%eax
+ aea:	e9 c8 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ aef:	81 7d 10 3b 03 00 00 	cmpl   $0x33b,0x10(%rbp)
+ af6:	75 0a                	jne    b02 <checkPrime+0xa5a>
+ af8:	b8 01 00 00 00       	mov    $0x1,%eax
+ afd:	e9 b5 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b02:	81 7d 10 3d 03 00 00 	cmpl   $0x33d,0x10(%rbp)
+ b09:	75 0a                	jne    b15 <checkPrime+0xa6d>
+ b0b:	b8 01 00 00 00       	mov    $0x1,%eax
+ b10:	e9 a2 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b15:	81 7d 10 47 03 00 00 	cmpl   $0x347,0x10(%rbp)
+ b1c:	75 0a                	jne    b28 <checkPrime+0xa80>
+ b1e:	b8 01 00 00 00       	mov    $0x1,%eax
+ b23:	e9 8f 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b28:	81 7d 10 55 03 00 00 	cmpl   $0x355,0x10(%rbp)
+ b2f:	75 0a                	jne    b3b <checkPrime+0xa93>
+ b31:	b8 01 00 00 00       	mov    $0x1,%eax
+ b36:	e9 7c 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b3b:	81 7d 10 59 03 00 00 	cmpl   $0x359,0x10(%rbp)
+ b42:	75 0a                	jne    b4e <checkPrime+0xaa6>
+ b44:	b8 01 00 00 00       	mov    $0x1,%eax
+ b49:	e9 69 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b4e:	81 7d 10 5b 03 00 00 	cmpl   $0x35b,0x10(%rbp)
+ b55:	75 0a                	jne    b61 <checkPrime+0xab9>
+ b57:	b8 01 00 00 00       	mov    $0x1,%eax
+ b5c:	e9 56 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b61:	81 7d 10 5f 03 00 00 	cmpl   $0x35f,0x10(%rbp)
+ b68:	75 0a                	jne    b74 <checkPrime+0xacc>
+ b6a:	b8 01 00 00 00       	mov    $0x1,%eax
+ b6f:	e9 43 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b74:	81 7d 10 6d 03 00 00 	cmpl   $0x36d,0x10(%rbp)
+ b7b:	75 0a                	jne    b87 <checkPrime+0xadf>
+ b7d:	b8 01 00 00 00       	mov    $0x1,%eax
+ b82:	e9 30 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b87:	81 7d 10 71 03 00 00 	cmpl   $0x371,0x10(%rbp)
+ b8e:	75 0a                	jne    b9a <checkPrime+0xaf2>
+ b90:	b8 01 00 00 00       	mov    $0x1,%eax
+ b95:	e9 1d 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ b9a:	81 7d 10 73 03 00 00 	cmpl   $0x373,0x10(%rbp)
+ ba1:	75 0a                	jne    bad <checkPrime+0xb05>
+ ba3:	b8 01 00 00 00       	mov    $0x1,%eax
+ ba8:	e9 0a 01 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ bad:	81 7d 10 77 03 00 00 	cmpl   $0x377,0x10(%rbp)
+ bb4:	75 0a                	jne    bc0 <checkPrime+0xb18>
+ bb6:	b8 01 00 00 00       	mov    $0x1,%eax
+ bbb:	e9 f7 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ bc0:	81 7d 10 8b 03 00 00 	cmpl   $0x38b,0x10(%rbp)
+ bc7:	75 0a                	jne    bd3 <checkPrime+0xb2b>
+ bc9:	b8 01 00 00 00       	mov    $0x1,%eax
+ bce:	e9 e4 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ bd3:	81 7d 10 8f 03 00 00 	cmpl   $0x38f,0x10(%rbp)
+ bda:	75 0a                	jne    be6 <checkPrime+0xb3e>
+ bdc:	b8 01 00 00 00       	mov    $0x1,%eax
+ be1:	e9 d1 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ be6:	81 7d 10 97 03 00 00 	cmpl   $0x397,0x10(%rbp)
+ bed:	75 0a                	jne    bf9 <checkPrime+0xb51>
+ bef:	b8 01 00 00 00       	mov    $0x1,%eax
+ bf4:	e9 be 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ bf9:	81 7d 10 a1 03 00 00 	cmpl   $0x3a1,0x10(%rbp)
+ c00:	75 0a                	jne    c0c <checkPrime+0xb64>
+ c02:	b8 01 00 00 00       	mov    $0x1,%eax
+ c07:	e9 ab 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ c0c:	81 7d 10 a9 03 00 00 	cmpl   $0x3a9,0x10(%rbp)
+ c13:	75 0a                	jne    c1f <checkPrime+0xb77>
+ c15:	b8 01 00 00 00       	mov    $0x1,%eax
+ c1a:	e9 98 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ c1f:	81 7d 10 ad 03 00 00 	cmpl   $0x3ad,0x10(%rbp)
+ c26:	75 0a                	jne    c32 <checkPrime+0xb8a>
+ c28:	b8 01 00 00 00       	mov    $0x1,%eax
+ c2d:	e9 85 00 00 00       	jmp    cb7 <checkPrime+0xc0f>
+ c32:	81 7d 10 b3 03 00 00 	cmpl   $0x3b3,0x10(%rbp)
+ c39:	75 07                	jne    c42 <checkPrime+0xb9a>
+ c3b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c40:	eb 75                	jmp    cb7 <checkPrime+0xc0f>
+ c42:	81 7d 10 b9 03 00 00 	cmpl   $0x3b9,0x10(%rbp)
+ c49:	75 07                	jne    c52 <checkPrime+0xbaa>
+ c4b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c50:	eb 65                	jmp    cb7 <checkPrime+0xc0f>
+ c52:	81 7d 10 c7 03 00 00 	cmpl   $0x3c7,0x10(%rbp)
+ c59:	75 07                	jne    c62 <checkPrime+0xbba>
+ c5b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c60:	eb 55                	jmp    cb7 <checkPrime+0xc0f>
+ c62:	81 7d 10 cb 03 00 00 	cmpl   $0x3cb,0x10(%rbp)
+ c69:	75 07                	jne    c72 <checkPrime+0xbca>
+ c6b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c70:	eb 45                	jmp    cb7 <checkPrime+0xc0f>
+ c72:	81 7d 10 d1 03 00 00 	cmpl   $0x3d1,0x10(%rbp)
+ c79:	75 07                	jne    c82 <checkPrime+0xbda>
+ c7b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c80:	eb 35                	jmp    cb7 <checkPrime+0xc0f>
+ c82:	81 7d 10 d7 03 00 00 	cmpl   $0x3d7,0x10(%rbp)
+ c89:	75 07                	jne    c92 <checkPrime+0xbea>
+ c8b:	b8 01 00 00 00       	mov    $0x1,%eax
+ c90:	eb 25                	jmp    cb7 <checkPrime+0xc0f>
+ c92:	81 7d 10 df 03 00 00 	cmpl   $0x3df,0x10(%rbp)
+ c99:	75 07                	jne    ca2 <checkPrime+0xbfa>
+ c9b:	b8 01 00 00 00       	mov    $0x1,%eax
+ ca0:	eb 15                	jmp    cb7 <checkPrime+0xc0f>
+ ca2:	81 7d 10 e5 03 00 00 	cmpl   $0x3e5,0x10(%rbp)
+ ca9:	75 07                	jne    cb2 <checkPrime+0xc0a>
+ cab:	b8 01 00 00 00       	mov    $0x1,%eax
+ cb0:	eb 05                	jmp    cb7 <checkPrime+0xc0f>
+ cb2:	b8 00 00 00 00       	mov    $0x0,%eax
+ cb7:	5d                   	pop    %rbp
+ cb8:	c3                   	ret
+
+0000000000000cb9 <main>:
+ cb9:	55                   	push   %rbp
+ cba:	48 89 e5             	mov    %rsp,%rbp
+ cbd:	48 83 ec 30          	sub    $0x30,%rsp
+ cc1:	e8 00 00 00 00       	call   cc6 <main+0xd>
+ cc6:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # ccd <main+0x14>
+ ccd:	48 89 c1             	mov    %rax,%rcx
+ cd0:	e8 7f f3 ff ff       	call   54 <printf>
+ cd5:	48 8d 45 fc          	lea    -0x4(%rbp),%rax
+ cd9:	48 89 c2             	mov    %rax,%rdx
+ cdc:	48 8d 05 11 00 00 00 	lea    0x11(%rip),%rax        # cf4 <main+0x3b>
+ ce3:	48 89 c1             	mov    %rax,%rcx
+ ce6:	e8 15 f3 ff ff       	call   0 <scanf>
+ ceb:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ cee:	89 c1                	mov    %eax,%ecx
+ cf0:	e8 b3 f3 ff ff       	call   a8 <checkPrime>
+ cf5:	84 c0                	test   %al,%al
+ cf7:	74 16                	je     d0f <main+0x56>
+ cf9:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ cfc:	89 c2                	mov    %eax,%edx
+ cfe:	48 8d 05 14 00 00 00 	lea    0x14(%rip),%rax        # d19 <main+0x60>
+ d05:	48 89 c1             	mov    %rax,%rcx
+ d08:	e8 47 f3 ff ff       	call   54 <printf>
+ d0d:	eb 14                	jmp    d23 <main+0x6a>
+ d0f:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ d12:	89 c2                	mov    %eax,%edx
+ d14:	48 8d 05 2b 00 00 00 	lea    0x2b(%rip),%rax        # d46 <main+0x8d>
+ d1b:	48 89 c1             	mov    %rax,%rcx
+ d1e:	e8 31 f3 ff ff       	call   54 <printf>
+ d23:	b8 00 00 00 00       	mov    $0x0,%eax
+ d28:	48 83 c4 30          	add    $0x30,%rsp
+ d2c:	5d                   	pop    %rbp
+ d2d:	c3                   	ret
+ d2e:	90                   	nop
+ d2f:	90                   	nop
